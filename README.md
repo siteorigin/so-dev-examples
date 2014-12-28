@@ -1,4 +1,4 @@
-so-dev-examples
+Developer docs code examples
 ===============
 
 Some code examples for developer documentation.
