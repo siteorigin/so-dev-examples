@@ -39,4 +39,4 @@ class My_Awesome_Widget extends SiteOrigin_Widget {
 	}
 }
 
-sow_external_widget_register('my-awesome-widget', __FILE__);
+siteorigin_widget_register('my-awesome-widget', __FILE__, 'My_Awesome_Widget');
