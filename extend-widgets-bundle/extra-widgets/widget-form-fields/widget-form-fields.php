@@ -103,11 +103,52 @@ class Widget_Form_Fields extends SiteOrigin_Widget {
 			),
 			'some_posts' => array(
 				'type' => 'posts',
-				'label' => __('Some posts query', 'siteorigin-widgets'),
+				'label' => __('Some posts query', 'widget-form-fields-text-domain'),
 			),
 			'some_icon' => array(
 				'type' => 'icon',
-				'label' => __('Select an icon', 'siteorigin-widgets'),
+				'label' => __('Select an icon', 'widget-form-fields-text-domain'),
+			),
+			'a_section' => array(
+				'type' => 'section',
+				'label' => __( 'A section containing related fields.' , 'widget-form-fields-text-domain' ),
+				'hide' => true,
+				'fields' => array(
+					'grouped_text' => array(
+						'type' => 'text',
+						'label' => __( 'A grouped text field', 'widget-form-fields-text-domain' )
+					),
+					'grouped_checkbox' => array(
+						'type' => 'checkbox',
+						'label' => __( 'A grouped checkbox', 'widget-form-fields-text-domain' )
+					)
+				)
+			),
+			'a_repeater' => array(
+				'type' => 'repeater',
+				'label' => __( 'A repeating repeater.' , 'widget-form-fields-text-domain' ),
+				'item_name'  => __( 'Repeater item', 'siteorigin-widgets' ),
+				'item_label' => array(
+					'selector'     => "[id*='repeat_text']",
+					'update_event' => 'change',
+					'value_method' => 'val'
+				),
+				'fields' => array(
+					'repeat_text' => array(
+						'type' => 'text',
+						'label' => __( 'A text field in a repeater item.', 'widget-form-fields-text-domain' )
+					),
+					'repeat_checkbox' => array(
+						'type' => 'checkbox',
+						'label' => __( 'A checkbox in a repeater item.', 'widget-form-fields-text-domain' )
+					)
+				)
+			),
+			'some_widget' => array(
+				'type' => 'widget',
+				'label' => __( 'Button Widget', 'widget-form-fields-text-domain' ),
+				'class' => 'SiteOrigin_Widget_Button_Widget',
+				'hide' => true
 			)
 		);
 		parent::__construct(
