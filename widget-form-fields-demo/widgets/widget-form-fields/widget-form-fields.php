@@ -29,7 +29,6 @@ class Widget_Form_Fields extends SiteOrigin_Widget {
 				'type' => 'textarea',
 				'label' => __( 'Type a message', 'widget-form-fields-text-domain' ),
 				'default' => 'An example of a long message.</br>It is even possible to add a few html tags.</br><a href="siteorigin.com" target="_blank"">Links!</a></br><strong>Strong</strong> and <em>emphasized</em> text.',
-				'allow_html_formatting' => true,
 				'rows' => 5
 			),
 			'some_number_in_a_range' => array(
