@@ -15,6 +15,11 @@ class Widget_Form_Fields extends SiteOrigin_Widget {
 				'label' => __( 'Some text goes here', 'widget-form-fields-text-domain' ),
 				'default' => 'Some default text.'
 			),
+			'some_url' => array(
+				'type' => 'link',
+				'label' => __('Some URL goes here', 'widget-form-fields-text-domain'),
+				'default' => 'http://www.example.com'
+			),
 			'some_color' => array(
 				'type' => 'color',
 				'label' => __( 'Choose a color', 'widget-form-fields-text-domain' ),
