@@ -40,9 +40,8 @@ class Widget_Form_Fields extends SiteOrigin_Widget {
 				'type' => 'slider',
 				'label' => __( 'Choose a number', 'widget-form-fields-text-domain' ),
 				'default' => 24,
-				'min' => 2,
-				'max' => 37,
-				'integer' => true
+				'min' => 0,
+				'max' => 42
 			),
 			'some_selection' => array(
 				'type' => 'select',
