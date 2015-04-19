@@ -102,15 +102,12 @@ class Widget_Form_Fields extends SiteOrigin_Widget {
 				'label' => __( 'Choose a media thing', 'widget-form-fields-text-domain' ),
 				'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
 				'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
-				'library' => 'image'//'image', 'audio', 'video', 'file'
+				'library' => 'image',//'image', 'audio', 'video', 'file'
+				'fallback' => true
 			),
 			'some_posts' => array(
 				'type' => 'posts',
 				'label' => __('Some posts query', 'widget-form-fields-text-domain'),
-			),
-			'some_icon' => array(
-				'type' => 'icon',
-				'label' => __('Select an icon', 'widget-form-fields-text-domain'),
 			),
 			'a_section' => array(
 				'type' => 'section',
@@ -131,6 +128,7 @@ class Widget_Form_Fields extends SiteOrigin_Widget {
 				'type' => 'repeater',
 				'label' => __( 'A repeating repeater.' , 'widget-form-fields-text-domain' ),
 				'item_name'  => __( 'Repeater item', 'siteorigin-widgets' ),
+				'scroll_count' => 10,
 				'item_label' => array(
 					'selector'     => "[id*='repeat_text']",
 					'update_event' => 'change',
@@ -152,7 +150,15 @@ class Widget_Form_Fields extends SiteOrigin_Widget {
 				'label' => __( 'Button Widget', 'widget-form-fields-text-domain' ),
 				'class' => 'SiteOrigin_Widget_Button_Widget',
 				'hide' => true
-			)
+			),
+			'some_icon' => array(
+				'type' => 'icon',
+				'label' => __('Select an icon', 'widget-form-fields-text-domain'),
+			),
+			'some_font' => array(
+				'type' => 'font',
+				'label' => __('Select a font', 'widget-form-fields-text-domain'),
+			),
 		);
 		parent::__construct(
 			'widget-form-fields',
