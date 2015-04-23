@@ -159,7 +159,15 @@ class Widget_Form_Fields extends SiteOrigin_Widget {
 				'type' => 'font',
 				'label' => __('Select a font', 'widget-form-fields-text-domain'),
 			),
+			'some_date' => array(
+				'type' => 'text',
+				'label' => __( 'Some date goes here', 'widget-form-fields-text-domain' ),
+				'sanitize' => 'date',
+			),
 		);
+
+		add_filter( 'siteorigin_widgets_sanitize_field_date', array( $this, 'sanitize_date' ) );
+
 		parent::__construct(
 			'widget-form-fields',
 			__('Widget Form Fields Example', 'widget-form-fields-text-domain'),
@@ -170,6 +178,12 @@ class Widget_Form_Fields extends SiteOrigin_Widget {
 			$form_options,
 			plugin_dir_path(__FILE__)
 		);
+	}
+
+	function sanitize_date( $date_to_sanitize ) {
+		// Perform custom date sanitization here.
+		$sanitized_date = sanitize_text_field( $date_to_sanitize );
+		return $sanitized_date;
 	}
 
 	function get_template_name($instance) {
