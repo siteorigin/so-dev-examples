@@ -22,7 +22,7 @@ class Hello_World_Widget extends SiteOrigin_Widget {
 			array(
 				'text' => array(
 					'type' => 'text',
-					'label' => __('Hello world! goes here.', 'siteorigin-widgets'),
+					'label' => __('Hello world! goes here.', 'hello-world-widget-text-domain'),
 					'default' => 'Hello world!'
 				),
 			),

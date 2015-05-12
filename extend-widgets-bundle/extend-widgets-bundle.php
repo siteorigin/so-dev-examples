@@ -15,3 +15,15 @@ function add_my_awesome_widgets_collection($folders){
 	return $folders;
 }
 add_filter('siteorigin_widgets_widget_folders', 'add_my_awesome_widgets_collection');
+
+function my_custom_fields_class_prefixes( $class_prefixes ) {
+	$class_prefixes[] = 'My_Custom_Field_';
+	return $class_prefixes;
+}
+add_filter( 'siteorigin_widgets_field_class_prefixes', 'my_custom_fields_class_prefixes' );
+
+function my_custom_fields_class_paths( $class_paths ) {
+	$class_paths[] = plugin_dir_path( __FILE__ ) . 'custom-fields/';
+	return $class_paths;
+}
+add_filter( 'siteorigin_widgets_field_class_paths', 'my_custom_fields_class_paths' );
