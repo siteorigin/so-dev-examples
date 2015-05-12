@@ -63,6 +63,27 @@ class Widget_Form_Fields extends SiteOrigin_Widget {
 					'thing_10' => __( 'Thing Ten', 'widget-form-fields-text-domain' ),
 				)
 			),
+			'some_multiple_selection' => array(
+				'type' => 'select',
+				'label' => __( 'Choose many things from a long list of things', 'widget-form-fields-text-domain' ),
+				'multiple' => true,
+				'default' => 'the_other_thing',
+				'options' => array(
+					'this_thing' => __( 'This thing', 'widget-form-fields-text-domain' ),
+					'that_thing' => __( 'That thing', 'widget-form-fields-text-domain' ),
+					'the_other_thing' => __( 'The other thing', 'widget-form-fields-text-domain' ),
+					'thing_1' => __( 'Thing One', 'widget-form-fields-text-domain' ),
+					'thing_2' => __( 'Thing Two', 'widget-form-fields-text-domain' ),
+					'thing_3' => __( 'Thing Three', 'widget-form-fields-text-domain' ),
+					'thing_4' => __( 'Thing Four', 'widget-form-fields-text-domain' ),
+					'thing_5' => __( 'Thing Five', 'widget-form-fields-text-domain' ),
+					'thing_6' => __( 'Thing Six', 'widget-form-fields-text-domain' ),
+					'thing_7' => __( 'Thing Seven', 'widget-form-fields-text-domain' ),
+					'thing_8' => __( 'Thing Eight', 'widget-form-fields-text-domain' ),
+					'thing_9' => __( 'Thing Nine', 'widget-form-fields-text-domain' ),
+					'thing_10' => __( 'Thing Ten', 'widget-form-fields-text-domain' ),
+				)
+			),
 			'another_selection' => array(
 				'type' => 'select',
 				'prompt' => __( 'Choose a thing from a long list of things', 'widget-form-fields-text-domain' ),
