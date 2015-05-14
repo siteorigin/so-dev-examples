@@ -22,7 +22,9 @@ class My_Custom_Field_Test_Widget extends SiteOrigin_Widget {
 			array(
 				'text' => array(
 					'type' => 'better-text',
-					'label' => __('A better text field.', 'my-custom-field-test-widget-text-domain'),
+					'my_property' => 'This is my custom property value',
+					'label' => __( 'A better text field.', 'my-custom-field-test-widget-text-domain' ),
+					'description' => __( 'A description for my custom text field.' ),
 					'default' => 'Some better text.'
 				),
 			),
