@@ -10,6 +10,20 @@ Author URI: http://example.com
 class Widget_Form_Fields extends SiteOrigin_Widget {
 	function __construct() {
 		$form_options = array(
+			'some_tinymce_editor' => array(
+				'type' => 'tinymce',
+				'label' => __( 'Visually edit, richly.', 'widget-form-fields-text-domain' ),
+				'default' => 'An example of a long message.</br>It is even possible to add a few html tags.</br><a href="siteorigin.com" target="_blank"">Links!</a>',
+				'rows' => 10,
+				'default_editor' => 'html',
+				'button_filters' => array(
+					'mce_buttons' => array( $this, 'filter_mce_buttons' ),
+					'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
+					'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
+					'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
+					'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
+				),
+			),
 			'some_text' => array(
 				'type' => 'text',
 				'label' => __( 'Some text goes here', 'widget-form-fields-text-domain' ),
@@ -199,6 +213,44 @@ class Widget_Form_Fields extends SiteOrigin_Widget {
 			$form_options,
 			plugin_dir_path(__FILE__)
 		);
+	}
+
+	function filter_mce_buttons( $buttons, $editor_id ) {
+		if ( ( $key = array_search( 'fullscreen', $buttons ) ) !== false ||
+		     ( $key = array_search( 'dfw', $buttons ) ) !== false) {
+			unset($buttons[$key]);
+		}
+		return $buttons;
+	}
+
+	function filter_mce_buttons_2( $buttons, $editor_id ) {
+		if ( ( $key = array_search( 'fullscreen', $buttons ) ) !== false ||
+		     ( $key = array_search( 'dfw', $buttons ) ) !== false) {
+			unset($buttons[$key]);
+		}
+		return $buttons;
+	}
+
+	function filter_mce_buttons_3( $buttons, $editor_id ) {
+		if ( ( $key = array_search( 'fullscreen', $buttons ) ) !== false ||
+		     ( $key = array_search( 'dfw', $buttons ) ) !== false) {
+			unset($buttons[$key]);
+		}
+		return $buttons;
+	}
+
+	function filter_mce_buttons_4( $buttons, $editor_id ) {
+		if ( ( $key = array_search( 'fullscreen', $buttons ) ) !== false ||
+		     ( $key = array_search( 'dfw', $buttons ) ) !== false) {
+			unset($buttons[$key]);
+		}
+		return $buttons;
+	}
+
+	public function quicktags_settings( $settings, $editor_id ) {
+		$settings['buttons'] = preg_replace( '/,fullscreen/', '', $settings['buttons'] );
+		$settings['buttons'] = preg_replace( '/,dfw/', '', $settings['buttons'] );
+		return $settings;
 	}
 
 	function sanitize_date( $date_to_sanitize ) {
