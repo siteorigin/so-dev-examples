@@ -7,6 +7,14 @@ Author: Me
 Author URI: http://example.com
 */
 
+function my_awesome_widget_banner_img_src( $banner_url, $widget_meta ) {
+	if( $widget_meta['ID'] == 'my-awesome-widget') {
+		$banner_url = plugin_dir_url(__FILE__) . 'images/awesome_widget_banner.svg';
+	}
+	return $banner_url;
+}
+add_filter( 'siteorigin_widgets_widget_banner', 'my_awesome_widget_banner_img_src', 10, 2);
+
 class My_Awesome_Widget extends SiteOrigin_Widget {
 	function __construct() {
 
