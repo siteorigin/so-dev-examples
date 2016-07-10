@@ -20,7 +20,7 @@ class My_Custom_Field_Better_Text extends SiteOrigin_Widget_Field_Base {
 		<?php
 	}
 
-	protected function sanitize_field_input( $value ) {
+	protected function sanitize_field_input($value, $instance) {
 		$sanitized_value = sanitize_text_field( $value );
 		return $sanitized_value;
 	}
@@ -30,7 +30,7 @@ class My_Custom_Field_Better_Text extends SiteOrigin_Widget_Field_Base {
 		return $label_classes;
 	}
 
-	protected function render_field_label() {
+	protected function render_field_label($value, $instance) {
 		?>
 		<h1>My custom label rendering</h1>
 		<?php
